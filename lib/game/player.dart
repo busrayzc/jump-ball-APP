@@ -34,7 +34,7 @@ class Player extends CircleComponent {
         position: position,
         radius: ballRadius,
         anchor: Anchor.center,
-        paint: Paint()..color = Colors.red,
+        paint: Paint()..color = const Color.fromARGB(255, 244, 54, 225),
       );
 
   void moveLeft() {
@@ -44,6 +44,13 @@ class Player extends CircleComponent {
   void moveRight() {
     horizontalVelocity = horizontalSpeed;
   }
+
+void resetPlayer(Vector2 startPosition) {
+  position.setFrom(startPosition);
+  verticalVelocity = jumpSpeed;
+  horizontalVelocity = 0;
+  hasFallen = false;
+}
 
   @override
   void update(double dt) {
