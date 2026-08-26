@@ -34,6 +34,7 @@ class Player extends CircleComponent {
         position: position,
         radius: ballRadius,
         anchor: Anchor.center,
+        priority: 10,
         paint: Paint()..color = const Color.fromARGB(255, 244, 54, 225),
       );
 
